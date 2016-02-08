@@ -40,7 +40,7 @@ export function cover() {
 
 export function travis() {
     return start(
-        cover(),
+        cover,
         codecov()
     );
 }
