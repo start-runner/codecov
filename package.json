@@ -1,6 +1,6 @@
 {
   "name": "start-codecov",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Codecov task for Start",
   "keywords": [ "start", "start-task", "codecov" ],
   "homepage": "https://github.com/start-runner/codecov",
