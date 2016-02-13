@@ -9,7 +9,7 @@
   "files": [ "build/" ],
   "main": "build/index.js",
   "dependencies": {
-    "codecov": "1.x.x",
+    "codecov.io": "0.x.x",
     "babel-runtime": "6.x.x"
   },
   "devDependencies": {
@@ -17,7 +17,6 @@
     "start-start-preset": "1.0.x",
 
     "babel-preset-es2015": "6.5.x",
-    "babel-preset-stage-2": "6.5.x",
     "babel-plugin-transform-runtime": "6.5.x",
     "babel-plugin-add-module-exports": "0.1.x",
 

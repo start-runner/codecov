@@ -20,6 +20,7 @@ npm i -D start-codecov
 import Start from 'start';
 import reporter from 'start-pretty-reporter';
 import files from 'start-files';
+import read from 'start-read';
 import clean from 'start-clean';
 import mocha from 'start-mocha';
 import * as coverage from 'start-coverage';
@@ -43,17 +44,11 @@ export function cover() {
 export function travis() {
     return start(
         cover,
+        files('coverage/lcov.info'),
+        read(),
         codecov()
     );
 }
 ```
 
-Task is rely on LCOV report from [start-coverage](https://github.com/start-runner/coverage).
-
-See [documentation](https://github.com/start-runner/start#readme) for details.
-
-## Arguments
-
-`codecov(options)`
-
-* `options` – [codecov options](https://github.com/codecov/codecov-node/blob/master/bin/codecov), `{ disable: 'search,gcov', file: 'coverage/lcov.info' }` by default
+This task relies on `[{ path, data, map }]` input and provides the same, see [documentation](https://github.com/start-runner/start#readme) for details.
