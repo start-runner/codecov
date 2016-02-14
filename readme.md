@@ -1,7 +1,8 @@
 # start-codecov
 
 [![npm](https://img.shields.io/npm/v/start-codecov.svg?style=flat-square)](https://www.npmjs.com/package/start-codecov)
-[![travis](http://img.shields.io/travis/start-runner/codecov.svg?style=flat-square)](https://travis-ci.org/start-runner/codecov)
+[![linux build](https://img.shields.io/travis/start-runner/codecov.svg?label=linux&style=flat-square)](https://travis-ci.org/start-runner/codecov)
+[![windows build](https://img.shields.io/appveyor/ci/start-runner/codecov.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/codecov)
 [![coverage](https://img.shields.io/codecov/c/github/start-runner/codecov.svg?style=flat-square)](https://codecov.io/github/start-runner/codecov)
 [![deps](https://img.shields.io/gemnasium/start-runner/codecov.svg?style=flat-square)](https://gemnasium.com/start-runner/codecov)
 [![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-00d06f.svg?style=flat-square)](https://gitter.im/start-runner/start)
