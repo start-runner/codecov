@@ -5,9 +5,10 @@
 [![windows build](https://img.shields.io/appveyor/ci/start-runner/codecov.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/codecov)
 [![coverage](https://img.shields.io/codecov/c/github/start-runner/codecov.svg?style=flat-square)](https://codecov.io/github/start-runner/codecov)
 [![deps](https://img.shields.io/gemnasium/start-runner/codecov.svg?style=flat-square)](https://gemnasium.com/start-runner/codecov)
-[![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-00d06f.svg?style=flat-square)](https://gitter.im/start-runner/start)
 
 [Codecov](https://codecov.io/) task for [Start](https://github.com/start-runner/start).
+
+**WARNING:** it's still uses semi-deprecated (but very lightweight) [codecov.io client](https://github.com/cainus/codecov.io) instead of [codecov-node](https://github.com/codecov/codecov-node) because of [issues/8](https://github.com/codecov/codecov-node/issues/8) + [pull/14](https://github.com/codecov/codecov-node/pull/14).
 
 ## Install
 
@@ -24,9 +25,8 @@ import files from 'start-files';
 import read from 'start-read';
 import clean from 'start-clean';
 import mocha from 'start-mocha';
-import * as coverage from 'start-coverage';
+import * as istanbul from 'start-istanbul';
 import codecov from 'start-codecov';
-import istanbul from 'babel-istanbul';
 
 const start = Start(reporter());
 
@@ -35,10 +35,10 @@ export function cover() {
         files('coverage/'),
         clean(),
         files('lib/**/*.js'),
-        coverage.instrument(istanbul),
+        istanbul.instrument(),
         files('test/**/*.js'),
         mocha(),
-        coverage.report()
+        istanbul.report()
     );
 }
 
