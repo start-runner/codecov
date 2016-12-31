@@ -8,12 +8,12 @@
 
 [Codecov](https://codecov.io/) task for [Start](https://github.com/start-runner/start).
 
-**WARNING:** it's still uses semi-deprecated (but very lightweight) [codecov.io client](https://github.com/cainus/codecov.io) instead of [codecov-node](https://github.com/codecov/codecov-node) because of [issues/8](https://github.com/codecov/codecov-node/issues/8) + [pull/14](https://github.com/codecov/codecov-node/pull/14).
-
 ## Install
 
-```
-npm i -D start-codecov
+```sh
+npm install --save-dev start-codecov
+# or
+yarn add --dev start-codecov
 ```
 
 ## Usage
@@ -30,26 +30,22 @@ import codecov from 'start-codecov';
 
 const start = Start(reporter());
 
-export function cover() {
-    return start(
-        files('coverage/'),
-        clean(),
-        files('lib/**/*.js'),
-        istanbul.instrument(),
-        files('test/**/*.js'),
-        mocha(),
-        istanbul.report()
-    );
-}
+export const cover = () => start(
+  files('coverage/'),
+  clean(),
+  files('lib/**/*.js'),
+  istanbul.instrument(),
+  files('test/**/*.js'),
+  mocha(),
+  istanbul.report()
+);
 
-export function travis() {
-    return start(
-        cover,
-        files('coverage/lcov.info'),
-        read(),
-        codecov()
-    );
-}
+export const travis = () => start(
+  cover,
+  files('coverage/lcov.info'),
+  read(),
+  codecov()
+);
 ```
 
 This task relies on `[{ path, data, map }]` input and provides the same, see [documentation](https://github.com/start-runner/start#readme) for details.
