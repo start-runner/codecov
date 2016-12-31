@@ -15,7 +15,7 @@
   ],
   "main": "build/index.js",
   "dependencies": {
-    "codecov.io": "^0.1.6"
+    "codecov-lite": "^0.1.2"
   },
   "devDependencies": {
     "babel-preset-start": "^0.1.0",
